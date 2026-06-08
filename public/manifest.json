@@ -1,0 +1,23 @@
+{
+  "short_name": "Auto2000 Way Halim",
+  "name": "Auto2000 Way Halim - Dealer Resmi Toyota Bandar Lampung",
+  "description": "Dealer resmi Toyota terpercaya di Bandar Lampung dengan layanan penjualan, service, dan suku cadang terlengkap",
+  "icons": [
+    {
+      "src": "https://firebasestorage.googleapis.com/v0/b/astra-c196c.firebasestorage.app/o/AssetsNew%2Ffavicon.png?alt=media&token=08048404-4346-4a1e-a9f7-275aed1037da",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://firebasestorage.googleapis.com/v0/b/astra-c196c.firebasestorage.app/o/AssetsNew%2Ffavicon.png?alt=media&token=08048404-4346-4a1e-a9f7-275aed1037da",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#dc2626",
+  "background_color": "#ffffff",
+  "categories": ["automotive", "business"],
+  "lang": "id"
+}

@@ -1,0 +1,82 @@
+.main-dashboard-bg {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 32px 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-grid--span2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid--span2 {
+    grid-column: span 1;
+  }
+}
+
+
+.stat-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+  color: #fff;
+  padding: 32px 28px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  min-height: 160px;
+  background: linear-gradient(135deg, #e81c34 0%, #c0102b 100%);
+  transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(200,16,43, 0.20);
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stat-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.stat-card-value {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-top: 4px;
+  letter-spacing: -0.03em;
+}
+
+.stat-card-subtitle {
+  font-size: 1rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .stat-card {
+    padding: 22px 16px 18px 16px;
+    min-height: 110px;
+  }
+  .stat-card-value {
+    font-size: 2rem;
+  }
+}

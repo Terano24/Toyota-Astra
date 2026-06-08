@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* Prevent mobile overscroll/bounce scrolling */
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html, body {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom black scrollbar for car carousel */
+/* Chrome, Edge, Safari */
+
+.scrollbar-black::-webkit-scrollbar {
+  height: 10px;
+  background: #f4f4f4;
+}
+.scrollbar-black::-webkit-scrollbar-thumb {
+  background: #111;
+  border-radius: 6px;
+}
+.scrollbar-black::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+/* Firefox */
+.scrollbar-black {
+  scrollbar-color: #111 #f4f4f4;
+  scrollbar-width: thin;
+}
+
+
+
+
+/* Dark mode enabled via JS in index.js */

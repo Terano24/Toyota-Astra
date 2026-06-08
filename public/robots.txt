@@ -1,0 +1,22 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow admin areas
+Disallow: /admin-dashboard
+Disallow: /encrypted-dashboard
+Disallow: /login
+Disallow: /signup
+
+# Sitemap location
+Sitemap: https://auto2000wayhalim.com/sitemap.xml

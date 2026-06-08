@@ -1,0 +1,119 @@
+.closing-ratio-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px 0 rgba(40, 40, 80, 0.08);
+  padding: 2rem 1.5rem 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+.closing-ratio-svg-wrap {
+  position: relative;
+  width: 120px;
+  height: 80px;
+  margin-bottom: 1.1rem;
+}
+.closing-ratio-svg {
+  display: block;
+}
+.closing-ratio-center {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+  width: 100%;
+}
+.closing-ratio-percent {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1;
+}
+.closing-ratio-label {
+  display: block;
+  font-size: 1.05rem;
+  color: #666;
+  margin-top: 0.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.closing-ratio-bottom-count {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.2em;
+}
+.sold-count {
+  background: linear-gradient(90deg, #e81c34 0%, #c0102b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+}
+.inquiries-count {
+  color: #888;
+  font-weight: 500;
+}
+.sep {
+  color: #bbb;
+  font-weight: 400;
+}
+
+.closing-ratio-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.3rem;
+  margin-top: 1.1rem;
+  width: 100%;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.97rem;
+  color: #333;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+.legend-dot {
+  width: 15px;
+  height: 7px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-right: 0.3em;
+}
+.legend-dot.sold {
+  background: linear-gradient(90deg, #e81c34 0%, #c0102b 100%);
+}
+.legend-dot.inprogress {
+  background: #1c7be8;
+}
+.legend-dot.pending {
+  background: repeating-linear-gradient(135deg, #c0c0c0 0 6px, #e8e8e8 6px 12px);
+  border: 1px solid #d0d0d0;
+}
+@media (max-width: 500px) {
+  .closing-ratio-card {
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+    min-width: 200px;
+    max-width: 100%;
+  }
+  .closing-ratio-svg-wrap {
+    width: 90px;
+    height: 60px;
+  }
+  .closing-ratio-percent {
+    font-size: 1.5rem;
+  }
+}

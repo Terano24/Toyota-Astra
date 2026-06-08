@@ -1,0 +1,283 @@
+.crp-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px 0 rgba(40, 40, 80, 0.08);
+  padding: 2rem 1.5rem 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+.crp-card-large {
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2.1rem 1.2rem 1.2rem 1.2rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.crp-doughnut-wrap {
+  position: relative;
+  width: 340px;
+  height: 120px;
+  margin-bottom: 1.1rem;
+}
+.crp-doughnut-large {
+  width: 340px;
+  height: 320px;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.crp-doughnut-large .CircularProgressbar {
+  width: 100% !important;
+  height: 100% !important;
+}
+.crp-doughnut-large .CircularProgressbar svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+.crp-center-label {
+  position: static;
+  margin-top: -1.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 800px) {
+  .crp-card-large {
+    min-width: 340px;
+    max-width: 100vw;
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+  }
+  .crp-doughnut-large {
+    width: 280px;
+    height: 180px;
+  }
+  .crp-center-label {
+    font-size: 1.2rem;
+    margin-top: -0.8rem;
+  }
+}
+
+
+.crp-center {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  margin-top: 1.6rem;
+}
+.crp-doughnut-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.crp-center {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  text-align: center;
+  width: 100%;
+}
+.crp-percent {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1;
+}
+.crp-label {
+  display: block;
+  font-size: 1.35rem;
+  color: #666;
+  margin-top: 0.18rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.crp-bottom-count {
+  margin-top: 0.6rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.2em;
+}
+.crp-sold {
+  color: #e81c34;
+  font-weight: 800;
+}
+.crp-inquiries {
+  color: #888;
+  font-weight: 600;
+}
+.crp-sep {
+  color: #bbb;
+  font-weight: 400;
+}
+.crp-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  margin-top: 1.4rem;
+  font-size: 1.08rem;
+  color: #444;
+  font-weight: 500;
+}
+.crp-dot {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+.crp-dot-sold {
+  background: #e81c34;
+}
+.crp-dot-inprogress {
+  background: #c0102b;
+}
+.crp-dot-pending {
+  background: repeating-linear-gradient(135deg, #c0c0c0 0 6px, #e8e8e8 6px 12px);
+  border: 1px solid #d0d0d0;
+}
+@media (max-width: 600px) {
+  .crp-card-large {
+    min-width: 200px;
+    max-width: 100%;
+    padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+  }
+  .crp-doughnut-large {
+    width: 120px;
+    height: 90px;
+  }
+  .crp-percent {
+    font-size: 1.7rem;
+  }
+  .crp-label {
+    font-size: 1rem;
+  }
+  .crp-bottom-count {
+    font-size: 1rem;
+  }
+  .crp-dot {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+.crp-doughnut-wrap {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  margin-bottom: 1.1rem;
+}
+.crp-doughnut-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.crp-center {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  text-align: center;
+  width: 100%;
+}
+.crp-percent {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1;
+}
+.crp-label {
+  display: block;
+  font-size: 1.05rem;
+  color: #666;
+  margin-top: 0.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.crp-bottom-count {
+  margin-top: 0.3rem;
+  text-align: center;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.2em;
+}
+.crp-sold {
+  color: #e81c34;
+  font-weight: 700;
+}
+.crp-inquiries {
+  color: #888;
+  font-weight: 500;
+}
+.crp-sep {
+  color: #bbb;
+  font-weight: 400;
+}
+.crp-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+  font-size: 0.98rem;
+  color: #444;
+}
+.crp-dot {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+.crp-dot-sold {
+  background: #e81c34;
+}
+.crp-dot-inprogress {
+  background: #1c7be8;
+}
+.crp-dot-pending {
+  background: repeating-linear-gradient(135deg, #c0c0c0 0 6px, #e8e8e8 6px 12px);
+  border: 1px solid #d0d0d0;
+}
+@media (max-width: 500px) {
+  .crp-card {
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+    min-width: 200px;
+    max-width: 100%;
+  }
+  .crp-doughnut-wrap {
+    width: 110px;
+    height: 85px;
+  }
+  .crp-percent {
+    font-size: 1.5rem;
+  }
+}

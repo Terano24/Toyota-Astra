@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Allow public read for car information
+    match /products/{productId} {
+      allow read: if true;
+    }
+
+    match /car_types/{carTypeId} {
+      allow read: if true;
+    }
+
+    // Allow public write for inquiries, but secure read/update
+    match /inquiries/{inquiryId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Allow public creation of signup requests
+    match /signup_requests/{requestId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Allow public read on salesmen for client-side assignment
+    match /salesmen/{salesmanId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == salesmanId;
+    }
+
+    // Allow read for system documents
+    match /system/{docId} {
+        allow read: if true;
+        // Allow write to assignment_tracker for client-side assignment
+        allow write: if docId == 'assignment_tracker' || request.auth != null;
+    }
+
+    // Chat system collections - allow public access for customer chat
+    match /chat_assignments/{assignmentId} {
+      allow create, read, update: if true;
+    }
+
+    match /chat_messages/{messageId} {
+      allow create, read: if true;
+    }
+
+    match /chat_sessions/{sessionId} {
+      allow create, read, update: if true;
+    }
+
+    // Secure other collections
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
