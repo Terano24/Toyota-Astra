@@ -1,7 +1,6 @@
 
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../../firebase/firebase';
-import emailjs from '@emailjs/browser';
 
 /**
  * Saves a signup request to Firestore for admin approval.
@@ -9,10 +8,6 @@ import emailjs from '@emailjs/browser';
  * @param {string} message - The message provided by the requester.
  * @returns {Promise} - Resolves if the request is saved successfully, rejects otherwise.
  */
-// Initialize EmailJS with your public key
-const EMAILJS_SERVICE_ID = 'service_6p22bud'; // Correct service ID
-// const EMAILJS_TEMPLATE_ID = 'template_5jwhb4l'; // Old template ID (DISABLED)
-const EMAILJS_PUBLIC_KEY = '1Wrr3tO9webkKwslK'; // Correct public key
 
 export async function sendSignupRequest(email, message) {
     if (!email || !message) {
@@ -34,18 +29,7 @@ export async function sendSignupRequest(email, message) {
         
         // 2. Send email notification
         try {
-            const templateParams = {
-    email: email,
-    password: "-", // You can replace '-' with a temp password if needed
-    to_email: email
-};
-console.log('[EmailJS] SignupRequest templateParams:', templateParams);
-// await emailjs.send(
-//    EMAILJS_SERVICE_ID,
-//    EMAILJS_TEMPLATE_ID,
-//    templateParams,
-//    EMAILJS_PUBLIC_KEY
-// ); // Disabled old template notification
+// Old email notification logic removed
             console.log('Email notification sent successfully');
         } catch (emailError) {
             console.error('Failed to send email notification:', emailError);

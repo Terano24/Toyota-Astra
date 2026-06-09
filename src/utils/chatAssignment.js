@@ -7,8 +7,7 @@ import {
   updateDoc, 
   query, 
   where, 
-  serverTimestamp,
-  runTransaction
+  serverTimestamp
 } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import { getNextSalesman } from './inquiryAssignment';
