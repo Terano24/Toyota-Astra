@@ -8,6 +8,7 @@ import CarVariety from '../common/CarVariety';
 import LoadingSpinner from '../common/LoadingSpinner';
 import SEOHead from '../common/SEOHead';
 import EnhancedVarietyButton from '../common/EnhancedVarietyButton';
+import { useInitialCarVariety } from '../../hooks/useInitialCarVariety';
 
 const CAR_NAME = 'Fortuner 4x4';
 const HERO_IMAGE = 'https://firebasestorage.googleapis.com/v0/b/astra-c196c.firebasestorage.app/o/SinglePage%2FFortuner%204x4%2F4by4Hero.jpg?alt=media&token=e12a40f7-8866-4540-adad-02f65be0c1a3';
@@ -63,9 +64,13 @@ export default function Fortuner4x4Detail() {
       setProducts(productsData);
 
       const carProduct = productsData.find(p => p.name === CAR_NAME);
-      if (carProduct && carProduct.price && !isNaN(Number(carProduct.price))) {
-        const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(Number(carProduct.price));
-        setPrice(formattedPrice);
+      if (carProduct && carProduct.price) {
+        const priceString = String(carProduct.price).replace(/[^0-9]/g, '');
+        const priceNumber = parseInt(priceString, 10);
+        if (!isNaN(priceNumber) && priceNumber > 0) {
+            const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(priceNumber);
+            setPrice(formattedPrice);
+        }
       }
     };
 
@@ -73,6 +78,9 @@ export default function Fortuner4x4Detail() {
   }, []);
 
   // Standardized handler functions
+  // Load initial car variety to prevent empty display
+  useInitialCarVariety('Fortuner 4x4', setSelectedCarType);
+
   const handleSelectCarType = (type) => {
     const priceNumber = parseInt(String(type.price).replace(/[^0-9]/g, ''), 10);
     setSelectedCarType({ ...type, price: priceNumber });
@@ -140,10 +148,14 @@ export default function Fortuner4x4Detail() {
                                 onClick={() => setIsVarietyModalOpen(true)}
                             />
                             <p className="text-4xl font-bold text-red-600 mt-4">
-                                {selectedCarType
-                                    ? (selectedCarType.price && !isNaN(selectedCarType.price) ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(selectedCarType.price) : 'Harga tidak tersedia')
-                                    : (price ? `Mulai dari ${price}` : 'Harga tidak tersedia')
-                                }
+                                {selectedCarType && selectedCarType.price
+                  ? (() => {
+                      let priceValue = selectedCarType.price;
+                      if (typeof priceValue === 'string') priceValue = parseInt(priceValue.replace(/[^0-9]/g, ''), 10);
+                      if (isNaN(priceValue) || priceValue === 0) return 'Harga tidak tersedia';
+                      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(priceValue);
+                    })()
+                  : (price ? `Mulai dari ${price}` : 'Harga tidak tersedia')}
                             </p>
                             <button onClick={handleInquiryClick} className="mt-6 bg-red-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-red-700 transition-all duration-300 shadow-md">
                                 Dapatkan Penawaran

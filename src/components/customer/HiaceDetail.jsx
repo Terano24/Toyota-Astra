@@ -8,6 +8,7 @@ import CarVariety from '../common/CarVariety';
 import LoadingSpinner from '../common/LoadingSpinner';
 import SEOHead from '../common/SEOHead';
 import EnhancedVarietyButton from '../common/EnhancedVarietyButton';
+import { useInitialCarVariety } from '../../hooks/useInitialCarVariety';
 
 const HERO_IMAGE = 'https://firebasestorage.googleapis.com/v0/b/astra-c196c.firebasestorage.app/o/SinglePage%2FHiace%2FYaceHero.jpg?alt=media&token=d450f58c-972b-435c-bbd6-b2893be4af9b';
 
@@ -41,6 +42,9 @@ export default function HiaceDetail() {
   const inquiryFormRef = useRef(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Load initial car variety to prevent empty display
+  useInitialCarVariety('Hiace', setSelectedCarType);
 
   const handleSelectCarType = (type) => {
     setSelectedCarType(type);

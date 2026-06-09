@@ -8,6 +8,7 @@ import CarVariety from '../common/CarVariety';
 import LoadingSpinner from '../common/LoadingSpinner';
 import SEOHead from '../common/SEOHead';
 import EnhancedVarietyButton from '../common/EnhancedVarietyButton';
+import { useInitialCarVariety } from '../../hooks/useInitialCarVariety';
 
 const HERO_IMAGE = 'https://firebasestorage.googleapis.com/v0/b/astra-c196c.firebasestorage.app/o/YrCross%2FYrCross-Hero.jpg?alt=media&token=e6059568-9956-49a5-aeaf-6919bc7befad';
 
@@ -69,6 +70,9 @@ export default function YarisCrossHybridDetail() {
     };
     fetchProductsAndPrice();
   }, []);
+
+  // Load initial car variety to prevent empty display
+  useInitialCarVariety('Yaris Cross Hybrid', setSelectedCarType);
 
   const handleInquiryClick = () => {
     if (inquiryFormRef.current) {

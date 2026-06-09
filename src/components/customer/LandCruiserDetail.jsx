@@ -151,10 +151,14 @@ export default function LandCruiserDetail() {
                                 onClick={() => setIsVarietyModalOpen(true)}
                             />
                   <p className="text-4xl font-bold text-red-600 mt-4">
-                    {selectedCarType
-                                    ? (selectedCarType.price && !isNaN(selectedCarType.price) ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(selectedCarType.price) : 'Harga tidak tersedia')
-                                    : (price ? `Mulai dari ${price}` : 'Harga tidak tersedia')
-                                }
+                    {selectedCarType && selectedCarType.price
+                  ? (() => {
+                      let priceValue = selectedCarType.price;
+                      if (typeof priceValue === 'string') priceValue = parseInt(priceValue.replace(/[^0-9]/g, ''), 10);
+                      if (isNaN(priceValue) || priceValue === 0) return 'Harga tidak tersedia';
+                      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(priceValue);
+                    })()
+                  : (price ? `Mulai dari ${price}` : 'Harga tidak tersedia')}
                   </p>
                   <button
                     onClick={handleInquiryClick}
