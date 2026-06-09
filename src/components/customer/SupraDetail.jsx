@@ -153,7 +153,7 @@ export default function SupraDetail() {
 
         <section id="color-variant-section" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 flex flex-col items-center">
-            <h2 className="text-3xl font-normal w-full max-w-2xl text-center flex flex-col items-center mb-2">PILIHAN WARNA & TIPE VARIAN</h2>
+            <h2 className="text-3xl font-normal w-full max-w-2xl mx-auto7729">PILIHAN WARNA & TIPE VARIAN</h2>
             <p className="text-center text-gray-500 mb-10">Tersedia dalam {colorVariants.length} pilihan warna</p>
             
             <div className="flex flex-col md:flex-row gap-12 items-start justify-center w-full">
@@ -211,7 +211,7 @@ export default function SupraDetail() {
 
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4 flex flex-col items-center">
-            <h3 className="text-3xl font-normal w-full max-w-2xl text-center flex flex-col items-center mb-8">Eksterior</h3>
+            <h3 className="text-3xl font-normal w-full max-w-2xl mx-auto11065">Eksterior</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {exteriorImages.map((image) => (
                 <div key={image.id} className="overflow-hidden rounded-lg shadow-lg">
@@ -224,7 +224,7 @@ export default function SupraDetail() {
 
         <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 flex flex-col items-center">
-            <h3 className="text-3xl font-normal w-full max-w-2xl text-center flex flex-col items-center mb-8">Interior</h3>
+            <h3 className="text-3xl font-normal w-full max-w-2xl mx-auto11722">Interior</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {interiorImages.map((image) => (
                 <div key={image.id} className="overflow-hidden rounded-lg shadow-lg">

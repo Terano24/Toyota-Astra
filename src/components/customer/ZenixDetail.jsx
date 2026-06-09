@@ -114,7 +114,7 @@ export default function ZenixDetail() {
         </section>
 
         <section className="py-12 md:py-20 bg-white">
-          <div className="mt-8 w-full max-w-2xl text-center flex flex-col items-center px-4">
+          <div className="mt-8 w-full max-w-2xl mx-auto text-center flex flex-col items-center px-4">
             <h2 className="text-2xl md:text-3xl font-normal mb-4 tracking-tight" style={{fontFamily:'Montserrat, sans-serif'}}>TOYOTA INNOVA HYBRID 2025</h2>
             <p className="text-gray-500 text-base md:text-lg max-w-3xl mx-auto">
               Toyota Innova Zenix Hybrid 2025 adalah adalah MPV hybrid pertama dari Toyota dengan performa dan efisiensi optimal. Terdapat 3 pilihan varian yang tersedia untuk Toyota Innova Zenix Hybrid. Hubungi sales Auto2000 untuk informasi lengkap dan promo menarik.

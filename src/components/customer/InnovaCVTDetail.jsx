@@ -180,7 +180,7 @@ export default function InnovaCVTDetail() {
                 />
                 
                 {/* Interactive Elements */}
-                <div className="mt-8 w-full max-w-2xl text-center flex flex-col items-center">
+                <div className="mt-8 w-full max-w-2xl mx-auto10578">
                   {/* Car Variety Button */}
                   <EnhancedVarietyButton
                     selectedCarType={selectedCarType}

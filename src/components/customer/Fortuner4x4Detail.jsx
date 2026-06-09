@@ -142,7 +142,7 @@ export default function Fortuner4x4Detail() {
                     </div>
                     <div className="w-full md:w-2/3 flex-grow flex flex-col items-center">
                         <motion.img key={selectedColor.img} src={selectedColor.img} alt={selectedColor.name} className="w-full max-w-2xl h-auto" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} />
-                        <div className="mt-8 w-full max-w-2xl text-center flex flex-col items-center">
+                        <div className="mt-8 w-full max-w-2xl mx-auto9647">
                             <EnhancedVarietyButton 
                                 selectedCarType={selectedCarType}
                                 onClick={() => setIsVarietyModalOpen(true)}

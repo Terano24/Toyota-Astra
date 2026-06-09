@@ -167,7 +167,7 @@ export default function HiaceDetail() {
                     transition={{ duration: 0.3 }}
                   />
                 </AnimatePresence>
-                <div className="mt-8 w-full max-w-2xl text-center flex flex-col items-center">
+                <div className="mt-8 w-full max-w-2xl mx-auto9439">
                   <EnhancedVarietyButton 
                                 selectedCarType={selectedCarType}
                                 onClick={() => setIsVarietyModalOpen(true)}

@@ -145,7 +145,7 @@ export default function LandCruiserDetail() {
 
               <div className="w-full md:col-span-2 flex-grow flex flex-col items-center relative">
                 <motion.img key={selectedColor.img} src={selectedColor.img} alt={selectedColor.name} className="w-full max-w-2xl h-auto z-10" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} />
-                <div className="mt-8 w-full max-w-2xl text-center flex flex-col items-center">
+                <div className="mt-8 w-full max-w-2xl mx-auto9307">
                   <EnhancedVarietyButton 
                                 selectedCarType={selectedCarType}
                                 onClick={() => setIsVarietyModalOpen(true)}

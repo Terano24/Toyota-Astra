@@ -162,7 +162,7 @@ export default function RaizeGRSportDetail() {
                     transition={{ duration: 0.3 }}
                   />
                 </AnimatePresence>
-                <div className="mt-8 w-full max-w-2xl text-center flex flex-col items-center">
+                <div className="mt-8 w-full max-w-2xl mx-auto10191">
                   <EnhancedVarietyButton 
                                 selectedCarType={selectedCarType}
                                 onClick={() => setIsVarietyModalOpen(true)}
