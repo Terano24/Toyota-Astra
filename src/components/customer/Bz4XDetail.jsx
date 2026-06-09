@@ -156,7 +156,7 @@ export default function Bz4XDetail() {
                             />
                             <p className="text-4xl font-bold text-red-600 mt-4">
                                 {selectedCarType
-                                    ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(selectedCarType.price)
+                                    ? (selectedCarType.price && !isNaN(selectedCarType.price) ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(selectedCarType.price) : 'Harga tidak tersedia')
                                     : (price ? `Mulai dari ${price}` : 'Harga tidak tersedia')
                                 }
                             </p>

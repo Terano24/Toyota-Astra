@@ -65,8 +65,8 @@ export default function AlphardDetail() {
       setProducts(productsData);
 
       const carProduct = productsData.find(p => p.name === CAR_NAME);
-      if (carProduct) {
-        const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(carProduct.price);
+      if (carProduct && carProduct.price && !isNaN(Number(carProduct.price))) {
+        const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(Number(carProduct.price));
         setPrice(formattedPrice);
       }
     };
@@ -149,7 +149,7 @@ export default function AlphardDetail() {
                             />
                             <p className="text-4xl font-bold text-red-600 mt-4">
                                 {selectedCarType
-                                    ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(selectedCarType.price)
+                                    ? (selectedCarType.price && !isNaN(selectedCarType.price) ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(selectedCarType.price) : 'Harga tidak tersedia')
                                     : (price ? `Mulai dari ${price}` : 'Harga tidak tersedia')
                                 }
                             </p>
